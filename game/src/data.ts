@@ -1,4 +1,4 @@
-const questions = [
+export const questions = [
     {
       question: "What is the scientific name for the domestic cat?",
       option: [
