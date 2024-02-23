@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import './App.css'
 import axios from 'axios';
+import { Answer } from './models/answer';
 export function App() {
   axios.get('https://api.thecatapi.com/v1/images/search', {
     headers: {
@@ -82,7 +83,7 @@ export function App() {
     const nextQuestion = currentQuestion + 1;
     if (nextQuestion < questions.length) {
       setCurrentQuestion(nextQuestion);
-      setAnswerCard({...answerCard, question:true, correct: false, iswrong: false})
+      setAnswerCard({ ...answerCard, question: true, correct: false, iswrong: false })
     } else {
       setShowScore(true);
     }
@@ -130,7 +131,7 @@ export function App() {
                 >
                   next question
                 </button>
-            
+
               </div>
             </div>
           </div>
@@ -151,7 +152,7 @@ export function App() {
                   next question
                 </button>
 
-            
+
               </div>
             </div>
           </div>
