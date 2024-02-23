@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import './App.css'
+import { Answer } from './models/answer';
 export function App() {
   const questions = [
     {
@@ -52,6 +53,8 @@ export function App() {
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [showScore, setShowScore] = useState(false);
   const [score, setScore] = useState(0);
+  const [answerCard, setAnswerCard] = useState(new Answer(false, false))
+
 
   const handleAnswerButtonClick = (isCorrect: boolean) => {
 
@@ -74,25 +77,29 @@ export function App() {
 
   return (
     <>
-      <div className="card w-96 bg-base-100 shadow-xl">
-        <figure><img src="https://daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg" alt="Shoes" /></figure>
-        <div className="card-body">
-          <h2 className="card-title">{questions[currentQuestion].question}</h2>
-          <p>{currentQuestion + 1}</p>
-          <div className="card-actions">
-            {questions[currentQuestion].option.map((answerOption, key) => (
-              <button className="btn btn-primary"
-                key={key}
-                onClick={() => handleAnswerButtonClick(answerOption.isCorrect)}
-              >
-                {answerOption.answerText}
-              </button>
-            ))}
-            {score}
+      <div className='bg-neutral-content'>
+        <div className="card w-96 bg-base-100 shadow-xl">
+          <figure><img src="https://daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg" alt="Shoes" /></figure>
+          <div className="card-body">
+            <h2 className="card-title">{questions[currentQuestion].question}</h2>
+
+            <div className="card-actions">
+              {questions[currentQuestion].option.map((answerOption, key) => (
+                <button className="btn btn-primary"
+                  key={key}
+                  onClick={() => handleAnswerButtonClick(answerOption.isCorrect)}
+                >
+                  {answerOption.answerText}
+                </button>
+              ))}
+              <div className='flex justify-between'>
+                <div className="badge badge-info">Current score: {score}</div>
+                <div className="badge badge-secondary">Question number: {currentQuestion + 1}</div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-
     </>
   );
 }
