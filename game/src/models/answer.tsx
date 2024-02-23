@@ -1,7 +1,8 @@
 export class Answer {
     constructor(
+        public question: boolean,
         public correct: boolean,
-        public isFalse: boolean
+        public iswrong: boolean
     ) { }
 
 }
