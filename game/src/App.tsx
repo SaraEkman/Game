@@ -90,7 +90,7 @@ import './App.css'
             </li>
           ))}
         </ul>
-       {showScore & score} 
+       {score} 
       </div>
     </>
   );
