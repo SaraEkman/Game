@@ -106,7 +106,7 @@ export function App() {
       }
       {answerCard.correct &&
         < div className='bg-neutral-content'>
-          <div className="card w-96 bg-green-500 shadow-xl">
+          <div className="card w-96 bg-base-100 shadow-xl">
             <figure><img src="https://daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg" alt="Shoes" /></figure>
             <div className="card-body">
               <h2 className="card-title">RIGHT</h2>
@@ -125,7 +125,7 @@ export function App() {
       }
       {answerCard.iswrong &&
         < div className='bg-neutral-content'>
-          <div className="card w-96 bg-red-600 shadow-xl">
+          <div className="card w-96 bg-base-100 shadow-xl">
             <figure><img src="https://daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg" alt="Shoes" /></figure>
             <div className="card-body">
               <h2 className="card-title">WRONG</h2>
