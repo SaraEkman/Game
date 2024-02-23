@@ -50,7 +50,7 @@ import './App.css'
   ]
 
   const [currentQuestion,setCurrentQuestion] = useState(0);
-  const [showScore,setShowScore] = useState<b(false);
+  const [showScore,setShowScore] = useState(false);
   const [score, setScore] = useState(0);
   
    const handleAnswerButtonClick = (isCorrect: boolean) => {
