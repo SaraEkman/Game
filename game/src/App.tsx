@@ -32,7 +32,6 @@ function App() {
   ]
 
 
-
   const [count, setCount] = useState(0)
   const [isOn, setIsOn] = useState(false)
 
@@ -42,8 +41,8 @@ function App() {
 
   return (
     <>
-      <h1></h1>
-    <button onClick={handleClick}></button>
+      <h1>Cat Quiz</h1>
+      <button onClick={handleClick}>Start</button>
     </>
   )
 }
