@@ -1,6 +1,19 @@
 import { useState } from 'react'
 import './App.css'
+import axios from 'axios';
 export function App() {
+  axios.get('https://api.thecatapi.com/v1/images/search', {
+  headers: {
+    'Content-Type': 'application/json',
+    'x-api-key': 'live_dMZTRAn7rQaxokarVKXCTIf1q9mypUBVAIPdOokdkYYlf6AtXD464OTv8Yc02FJQ'
+  }
+})
+.then(response => {
+  console.log(response.data);
+})
+.catch(error => {
+  console.error('Error:', error);
+});
   const questions = [
     {
       question: "What is the average lifespan of a domestic cat?",
